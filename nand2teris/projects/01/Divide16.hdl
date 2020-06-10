@@ -1,0 +1,24 @@
+
+CHIP Divide16 {
+	IN in;
+	OUT out[16];
+	
+	PARTS:
+	Cable(in = in, out = out[0]);
+	Cable(in = in, out = out[1]);
+	Cable(in = in, out = out[2]);
+	Cable(in = in, out = out[3]);
+	Cable(in = in, out = out[4]);
+	Cable(in = in, out = out[5]);
+	Cable(in = in, out = out[6]);
+	Cable(in = in, out = out[7]);
+	Cable(in = in, out = out[8]);
+	Cable(in = in, out = out[9]);
+	Cable(in = in, out = out[10]);
+	Cable(in = in, out = out[11]);
+	Cable(in = in, out = out[12]);
+	Cable(in = in, out = out[13]);
+	Cable(in = in, out = out[14]);
+	Cable(in = in, out = out[15]);
+}
+

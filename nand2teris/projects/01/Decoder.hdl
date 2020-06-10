@@ -1,0 +1,15 @@
+
+CHIP Decoder {
+    IN a, b;
+    OUT o0, o1, o2, o3;
+
+    PARTS:
+    // Put your code here:
+	Not(in = a, out = na);
+	Not(in = b, out = nb);
+	And(a = na, b = nb, out = o0);
+	And(a = na, b = b, out = o1);
+	And(a = a, b = nb, out = o2);
+	And(a = a, b = b, out = o3);
+	
+}
