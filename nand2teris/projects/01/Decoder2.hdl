@@ -1,5 +1,5 @@
 
-CHIP Decoder {
+CHIP Decoder2 {
     IN a, b;
     OUT o0, o1, o2, o3;
 

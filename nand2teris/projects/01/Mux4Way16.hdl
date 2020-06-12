@@ -17,8 +17,12 @@ CHIP Mux4Way16 {
 
     PARTS:
     // Put your code here:
-	Decoder(a = sel[0], b = sel[1], o1 = oa, o2 = 0b, o3 = oc, o4 = o4);
-	Or16(a = , b = , out = o1);
-	Or16(a = , b = , out = o2);
-	Or16(a = o1, b = 02, out = out);
+	Decoder2(a = sel[1], b = sel[0], o0 = sela, o1 = selb, o2 = selc, o3 = seld);
+	Mux16(a = false, b = a, sel = sela, out = oa);  
+	Mux16(a = false, b = b, sel = selb, out = ob); 
+	Mux16(a = false, b = c, sel = selc, out = oc);
+	Mux16(a = false, b = d, sel = seld, out = od);   
+	Or16(a = oa, b = ob, out = o1);
+	Or16(a = oc, b = od, out = o2);
+	Or16(a = o1, b = o2, out = out);
 }

@@ -16,5 +16,9 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // Put your code here:
+	Decoder2(a = sel[1], b = sel[0], o0 = sel0, o1 = sel1, o2 = sel2, o3 = sel3);
+	And(a = in, b = sel0, out = a);
+	And(a = in, b = sel1, out = b);
+	And(a = in, b = sel2, out = c);
+	And(a = in, b = sel3, out = d);
 }
