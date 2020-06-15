@@ -1,0 +1,7 @@
+CHIP Cable {
+	IN in;
+	OUT out;
+
+	PARTS:
+	And(a = true, b = in, out = out);
+}
