@@ -1,0 +1,18 @@
+CHIP JumpLogic {
+	IN	jmp[3], zr, ng, instrMode;
+	OUT	load, inc;
+
+	PARTS:
+
+	Not(in = zr, out = Nzr);
+	Not(in = ng, out = Nng);
+	
+	And(a = Nzr, b = Nng, out = gr);
+	Or(a = zr, b = ng, out = lessEq);
+
+	Mux8Way(a = false, b = gr, c = zr, d = Nng, e = ng, f = Nzr, g = lessEq, h = true, sel = jmp, out = prepreload);
+	And(a = instrMode, b = prepreload, out = preload);
+	Not(in = preload, out = inc);
+	Cable(in = preload, out = load);
+
+}

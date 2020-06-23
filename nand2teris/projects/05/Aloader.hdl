@@ -1,0 +1,17 @@
+/*
+	0/13	Aloader
+
+	00	1
+	01	1
+	10	0
+	11	1
+*/
+
+CHIP Aloader {
+	IN a, b;
+	OUT out;
+	
+	PARTS:
+	Not(in = a, out = na);	
+	Or(a = na, b = b, out = out);
+}
